@@ -1,0 +1,437 @@
+/*--------------------------------------------------------------
+  Font 
+--------------------------------------------------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Varela&display=swap');
+
+
+
+/*--------------------------------------------------------------
+  General Body Styles
+--------------------------------------------------------------*/
+
+body {
+    font-family: "Varela", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #FEFEFE;
+    color: #252422;
+}
+
+/*--------------------------------------------------------------
+  Navigation Section
+--------------------------------------------------------------*/
+
+nav {
+    background-color: #004582;
+    color: white;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+#logo {
+    width: 35px;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0em 0.8em;
+}
+
+.nav-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+    margin-right: 20px;
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: fixed;
+    top: 10%; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    width: 100vw; 
+    height: 100vh;
+    background-color: white;
+    border: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    font-size: 0.7em;
+    padding: 10px;
+    color: #004582;
+    display: block; /* Make links fill the list item */
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+}
+
+.nav-icon.active .dropdown-menu {
+    display: block;
+}
+
+.nav-icon::before {
+    content: "☰";
+}
+
+/*--------------------------------------------------------------
+  Welcome Image Container
+--------------------------------------------------------------*/
+
+.welcome-container {
+    position: relative;
+    height: 300px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-align: center;
+}
+
+#welcome-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    color: white; /* Text color */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay for better readability */
+}
+
+.overlay h2 {
+    padding: 0.2em;
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+/*--------------------------------------------------------------
+  About & Club Container
+--------------------------------------------------------------*/
+
+.about-container, .clubinfo-container {
+    text-align: center;
+    padding: 0.8em;
+    margin: 0.5em;
+}
+
+.about-container h2, .clubinfo-container h2 {
+    text-align: center;
+    color: #004582;
+}
+.about-container, .clubinfo-container p{
+    text-align: start;
+    color: #252422;
+}
+
+/*--------------------------------------------------------------
+  Club Owners Container
+--------------------------------------------------------------*/
+
+.club-owners {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    color: #f0f0f0;
+    background-color: #33404A;
+    padding: 1em;
+}
+
+.owner-info {
+    padding: 1em;
+    margin: 0.5em;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+#profile-icon {
+    width: 50px;
+}
+
+/*--------------------------------------------------------------
+  Buttons
+--------------------------------------------------------------*/
+
+button {
+    padding: 0.5em 0.5em;
+    background-color: #004582;
+    color: #f0f0f0;
+    font-size: 1.25em;
+    border: none;
+    border-radius: 3px;
+    display: block; /* Make it a block-level element */
+    margin: 10px auto; /* Center it horizontally */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+    background-color: #2272A2;
+    font-size: 1.25em;
+}
+
+/*--------------------------------------------------------------
+  Footer Section
+--------------------------------------------------------------*/
+
+footer {
+    background-color: #33C3EF;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+#footer-icons {
+    width: 35px;
+    cursor: pointer;
+}
+
+/*--------------------------------------------------------------
+  Modal Form
+--------------------------------------------------------------*/
+
+.join-form {
+    display: none; /* Initially hide the form */
+    padding: 0.8em;
+    margin: 0.5em;
+    max-width: 100%;
+}
+
+.join-form.active {
+    display: block;
+}
+
+
+.join-form input,
+.join-form select {
+    display: block;
+    margin-top: 10px;
+    width: calc(100%);
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+.join-form textarea{
+    display: block;
+    margin-top: 5px;
+    width: calc(100%);
+    border: 1px solid #ccc;
+    resize: none;
+    background-color: white;
+    color: #252422;
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 150px;
+}
+
+.join-form label {
+    border: none;
+    font-weight: bold;
+    display: block; /* Ensure labels are on their own lines */
+    margin-top: 20px;
+    font-size: 18px;
+    color: #004582;
+}
+
+.join-form button[type="submit"] {
+    display: block; /* Make it a block-level element */
+    margin: 10px auto; /* Center it horizontally */
+    background-color: #004582;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.join-form button[type="submit"]:hover {
+    background-color: #2272A2;
+}
+
+/*--------------------------------------------------------------
+  Images 
+--------------------------------------------------------------*/
+
+.images-grid {
+    padding: 0.8em;
+    margin: 0.5em;
+    object-fit: contain;
+    gap: 10px;
+    display: grid;
+    grid-template-rows: auto auto auto; /* Three rows, auto sizing */
+    grid-template-columns: auto ; /* Two columns, auto sizing */ 
+}
+
+.clickable-image{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+
+#card-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+/*--------------------------------------------------------------
+  membership content styling
+--------------------------------------------------------------*/
+
+.membership-container{
+    display: flex;
+    flex-direction: column;
+    object-fit: contain;
+    padding: 0.5em;
+    background-color: white;
+}
+
+.benefits-card, .membership-detials{
+    padding: 0.8em;
+    margin: 0.5em;
+    gap: 10px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.membership-detials{
+    text-align: center;
+    color: white;
+    background-color: #004582;
+    font-weight: bold;
+}
+
+.membership-detials span{
+    color: lightgray;
+    font-weight: bolder;
+}
+
+.benefits-card h2{
+    text-align: center;
+    color: #004582;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+  Contact Section
+--------------------------------------------------------------*/
+body.dark-page{
+    background-color: #252422;
+    height: 100vh;
+}
+
+.contact-section{
+    padding: 0.8em;
+    margin: 0.5em;
+}
+
+.contact-section h1{
+    text-align: center;
+    color: white;
+}
+
+#contactForm input, textarea{
+    width: 100%;
+    height: 30px;
+    border: none;
+    font-size: 16px;
+    color: white;
+    border-bottom: 1px solid #ccc5b9;
+    margin-top: 20px;
+    resize: none;
+    background-color: #252422;
+}
+
+#contactForm label{
+    color: white;
+    font-weight: bold;
+}
+
+#whatsapp-icon{
+    width: 45px;
+    position: fixed; 
+    bottom: 10px; 
+    left: 10px; 
+    z-index: 1000;
+}
+
+/*--------------------------------------------------------------
+  login Section
+--------------------------------------------------------------*/
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5em;
+    height: 350px;
+    background-color: white;
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #004582;
+    margin-bottom: 20px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 0.8em;
+    margin: 0.5em;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.login-container button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
